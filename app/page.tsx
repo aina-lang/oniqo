@@ -1,9 +1,10 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, Globe, Building2, FileText, Zap, Users, Calendar, Mail, Users2, LocateIcon, Rocket, Settings } from 'lucide-react';
+import { Menu, Globe, Building2, FileText, Zap, Users, Calendar, Mail, Users2, LocateIcon, Rocket, Settings, ArrowRight } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const StatsCards = () => {
   const stats = [
@@ -81,13 +82,13 @@ const oniqoPage = () => {
 
   const BrandsSection = () => {
      const brands = [
-    { name: 'Karta.com',     color: 'from-blue-400/90 to-blue-500/90' },
-    { name: 'Wanderlab.com', color: 'from-red-400/90 to-red-500/90' },
-    { name: 'Nomadous.com',  color: 'from-green-400/90 to-green-500/90' },
-    { name: 'Hootook.com',   color: 'from-purple-400/90 to-purple-500/90' },
-    { name: 'Seekzer.com',   color: 'from-yellow-400/90 to-yellow-500/90' },
-    { name: 'Nowdream.com',  color: 'from-pink-400/90 to-pink-500/90' },
-    { name: 'Roamify.com',   color: 'from-orange-400/90 to-orange-500/90' },
+    { name: 'Karta.com',     color: 'from-blue-400/50 to-blue-500/70' },
+    { name: 'Wanderlate.com', color: 'from-red-400/50 to-red-500/70' },
+    { name: 'Innminute.com',  color: 'from-green-400/50 to-green-500/70' },
+    { name: 'Hoobnb.com',   color: 'from-purple-400/50 to-purple-500/70' },
+    { name: 'Homiqio.com',   color: 'from-yellow-400/50 to-yellow-500/70' },
+    { name: 'Hoooteeel.com',  color: 'from-pink-400/50 to-pink-500/70' },
+    { name: 'Rooofy.com',   color: 'from-orange-400/50 to-orange-500/70' },
   ];
 
 
@@ -115,6 +116,12 @@ const oniqoPage = () => {
               {brand.name}
             </div>
           ))}
+        </div>
+        <div className="flex justify-center">
+          <Link href="/marques" className="text-gray-600 hover:underline mt-12 flex items-center space-x-4">
+            <span>Explorer tous nos marques</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </div>
     </section>
