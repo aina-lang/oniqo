@@ -18,13 +18,13 @@ interface BrandCardProps {
 const oniqoBrandsPage = () => {
   
   const HeroSection = () => (
-    <section className="pt-32 pb-20 px-6">
-      <div className="max-w-4xl  text-left ">
-        <div className="text-sm text-gray-600 mb-4">NOS MARQUES</div>
-        <h1 className="text-6xl md:text-7xl font-bold mb-6 leading-tight">
+    <section className="pt-24 md:pt-32 pb-12 md:pb-20 px-6 md:px-12">
+      <div className="max-w-4xl text-left">
+        <div className="text-xs md:text-sm text-gray-600 mb-4 tracking-wider uppercase">NOS MARQUES</div>
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
           Sept marques, un écosystème
         </h1>
-        <p className="text-lg text-gray-600 ">
+        <p className="text-base md:text-lg text-gray-600 max-w-2xl">
           Découvrez les marques qui composent le groupe oniqo et révolutionnent l'industrie du voyage à l'échelle internationale.
         </p>
       </div>
@@ -32,10 +32,10 @@ const oniqoBrandsPage = () => {
   );
 
   const BrandCard = ({ badge, title, description, features, bgColor, buttonText, buttonColor, image, buttonGradient }: BrandCardProps) => (
-    <section className="py-12 px-6">
+    <section className="py-12 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className={`relative h-96 ${bgColor} rounded-3xl overflow-hidden shadow-xl`}>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className={`relative aspect-square lg:h-[78vh] lg:max-w-xl mx-auto w-full ${bgColor} rounded-3xl overflow-hidden shadow-xl`}>
             {image && (
               <img 
                 src={image} 
@@ -46,22 +46,22 @@ const oniqoBrandsPage = () => {
             {!image && <div className="w-full h-full bg-white/20 rounded-2xl animate-pulse" />}
           </div>
           <div>
-            <span className={`inline-block ${buttonColor} text-white text-xs px-4 py-2 rounded-full mb-4 font-semibold`}>
+            <span className={`inline-block ${buttonColor} text-white text-[10px] md:text-xs px-4 py-1.5 md:py-2 rounded-full mb-4 font-semibold tracking-wide shadow-sm`}>
               {badge}
             </span>
-            <h2 className="text-4xl font-bold mb-4">{title}</h2>
-            <p className="text-gray-600 mb-6">{description}</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+            <p className="text-gray-600 mb-6 text-base md:text-lg leading-relaxed">{description}</p>
             <ul className="space-y-3 mb-8">
               {features.map((feature, idx) => (
                 <li key={idx} className="flex items-start gap-3">
-                  <div className={`shrink-0 w-5 h-5 ${buttonColor} rounded-full flex items-center justify-center mt-0.5`}>
+                  <div className={`shrink-0 w-5 h-5 ${buttonColor} rounded-full flex items-center justify-center mt-1`}>
                     <Check className="w-3 h-3 text-white" />
                   </div>
-                  <span className="text-gray-700">{feature}</span>
+                  <span className="text-gray-700 text-sm md:text-base">{feature}</span>
                 </li>
               ))}
             </ul>
-            <Button className={`${buttonGradient || buttonColor} h-14 hover:opacity-90 rounded-full px-8`}>
+            <Button className={`${buttonGradient || buttonColor} h-14 hover:opacity-90 rounded-full px-8 w-full sm:w-auto transition-transform active:scale-95`}>
               {buttonText} <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>
@@ -71,30 +71,30 @@ const oniqoBrandsPage = () => {
   );
 
   const BrandCardReverse = ({ badge, title, description, features, bgColor, buttonText, buttonColor, image, buttonGradient }: BrandCardProps) => (
-    <section className="py-12 px-6">
+    <section className="py-12 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <span className={`inline-block ${buttonColor} text-white text-xs px-4 py-2 rounded-full mb-4 font-semibold`}>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="order-2 lg:order-1">
+            <span className={`inline-block ${buttonColor} text-white text-[10px] md:text-xs px-4 py-1.5 md:py-2 rounded-full mb-4 font-semibold tracking-wide shadow-sm`}>
               {badge}
             </span>
-            <h2 className="text-4xl font-bold mb-4">{title}</h2>
-            <p className="text-gray-600 mb-6">{description}</p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+            <p className="text-gray-600 mb-6 text-base md:text-lg leading-relaxed">{description}</p>
             <ul className="space-y-3 mb-8">
               {features.map((feature, idx) => (
                 <li key={idx} className="flex items-start gap-3">
-                  <div className={`shrink-0 w-5 h-5 ${buttonColor} rounded-full flex items-center justify-center mt-0.5`}>
+                  <div className={`shrink-0 w-5 h-5 ${buttonColor} rounded-full flex items-center justify-center mt-1`}>
                     <Check className="w-3 h-3 text-white" />
                   </div>
-                  <span className="text-gray-700">{feature}</span>
+                  <span className="text-gray-700 text-sm md:text-base">{feature}</span>
                 </li>
               ))}
             </ul>
-            <Button className={`${buttonGradient || buttonColor} h-14 hover:opacity-90 rounded-full px-8`}>
+            <Button className={`${buttonGradient || buttonColor} h-14 hover:opacity-90 rounded-full px-8 w-full sm:w-auto transition-transform active:scale-95`}>
               {buttonText} <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>
-          <div className={`relative h-96 ${bgColor} rounded-3xl overflow-hidden shadow-xl`}>
+          <div className={`relative aspect-square lg:h-[78vh] lg:max-w-xl mx-auto w-full ${bgColor} rounded-3xl overflow-hidden shadow-xl order-1 lg:order-2`}>
             {image && (
               <img 
                 src={image} 
@@ -110,39 +110,37 @@ const oniqoBrandsPage = () => {
   );
 
   const IntegrationSection = () => (
-    <section className="py-20 px-6 bg-gray-50">
-      <div className=" mx-auto text-center">
-        <div className="text-sm text-gray-600 mb-4">SYNÉRGIES</div>
-        <h2 className="text-5xl font-bold mb-4">Un écosystème intégré</h2>
-        <p className="text-gray-600 mb-12 text-lg">
+    <section className="py-16 md:py-20 px-6 md:px-12 bg-gray-50">
+      <div className="max-w-7xl mx-auto text-center">
+        <div className="text-xs md:text-sm text-gray-600 mb-4 tracking-wider uppercase">SYNÉRGIES</div>
+        <h2 className="text-3xl md:text-5xl font-bold mb-4">Un écosystème intégré</h2>
+        <p className="text-gray-600 mb-12 text-base md:text-lg max-w-2xl mx-auto">
           Nos marques travaillent ensemble pour offrir une expérience voyage complète et cohérente
         </p>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {[
-
             {
-             icon:User,
-             title:"Intégration technologique",
-             description:"Nos plateformes partagent une infrastructure commune pour une expérience utilisateur fluide" 
+             icon: Check,
+             title: "Intégration technologique",
+             description: "Nos plateformes partagent une infrastructure commune pour une expérience utilisateur fluide" 
             },
             {
-             icon:User,
-             title:"Données partagées",
-             description:"Les insights clients sont partagés pour personnaliser l'expérience sur toutes nos marques" 
+             icon: Check,
+             title: "Données partagées",
+             description: "Les insights clients sont partagés pour personnaliser l'expérience sur toutes nos marques" 
             },
             {
-             icon:User,
-             title:"Expertise commune",
-             description:"Nos équipes collaborent pour innover et améliorer continuellement nos services" 
+             icon: Check,
+             title: "Expertise commune",
+             description: "Nos équipes collaborent pour innover et améliorer continuellement nos services" 
             },
           ].map((item) => (
-            <div key={item.title} className="bg-white rounded-2xl p-8  text-left transform hover:-translate-y-2 transition-all duration-200 hover:shadow-lg">
-              <div className="h-12 w-12 mb-6  bg-slate-900 rounded-xl flex items-center justify-center">
-                <item.icon className="w-6 h-6  rounded-xl  text-white" />
-             
+            <div key={item.title} className="bg-white border border-gray-100 rounded-2xl p-6 md:p-8 text-left transform hover:-translate-y-2 transition-all duration-200 hover:shadow-lg">
+              <div className="h-10 w-10 md:h-12 md:w-12 mb-6 bg-slate-900 rounded-xl flex items-center justify-center shadow-lg">
+                <item.icon className="w-5 h-5 text-white" />
               </div>
-             <h3 className="text-xl font-bold mb-2 text-left">{item.title}</h3>
-             <p className="text-gray-600 mb-4 text-left text-sm">{item.description}</p>
+              <h3 className="text-lg md:text-xl font-bold mb-2">{item.title}</h3>
+              <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>
             </div>
           ))}
         </div>

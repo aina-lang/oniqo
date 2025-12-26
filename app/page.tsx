@@ -23,20 +23,20 @@ const StatsCards = () => {
   ];
 
   return (
-    <div className="w-full max-w-4xl  py-8">
-      <div className="flex items-center  gap-8">
+    <div className="w-full max-w-4xl py-8">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8">
         {stats.map((stat, index) => (
           <React.Fragment key={index}>
-            <div className="text-center">
-              <div className="text-4xl text-left font-bold text-[#1f2837] mb-2">
+            <div className="text-left sm:text-center">
+              <div className="text-3xl sm:text-4xl font-bold text-[#1f2837] mb-1 sm:mb-2">
                 {stat.number}
               </div>
-              <div className="text-sm text-gray-600">
+              <div className="text-xs sm:text-sm text-gray-600">
                 {stat.label}
               </div>
             </div>
             {index < stats.length - 1 && (
-              <div className="h-16 w-px bg-gray-300"></div>
+              <div className="hidden sm:block h-16 w-px bg-gray-300"></div>
             )}
           </React.Fragment>
         ))}
@@ -51,30 +51,30 @@ const oniqoPage = () => {
 
 
   const HeroSection = () => (
-    <section className="pt-32 pb-20 px-8">
-      <div className=" mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+    <section className="pt-24 md:pt-32 pb-12 md:pb-20 px-6 md:px-12">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-          <Badge className="mb-4 mt-8 p-4 py-2 text-gray-800 bg-gray-100 text-[14px]">Groupe oniqo</Badge>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 ">
+            <Badge className="mb-4 mt-8 p-4 py-2 text-gray-800 bg-gray-100 text-[14px]">Groupe oniqo</Badge>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
               L'écosystème du voyage réinventé
             </h1>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl">
               Un groupe startup tech de sept marques commerciales à vocation internationale, construisant un écosystème touristique intégré et innovant
             </p>
-            <div className="flex gap-4">
-              <Button className="bg-[#1f2837] h-14  hover:bg-slate-800 rounded-full px-8">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button className="bg-[#1f2837] h-14 hover:bg-slate-800 rounded-full px-8 w-full sm:w-auto">
                 Découvrir nos marques →
               </Button>
-              <Button variant="outline" className="rounded-full px-8 h-14 border-[#1f2837] border-2">
+              <Button variant="outline" className="rounded-full px-8 h-14 border-[#1f2837] border-2 w-full sm:w-auto">
                 Nous contacter
               </Button>
             </div>
             <StatsCards/>
           </div>
-          <div className="relative  bg-gray-200 rounded-3xl shadow-xl overflow-hidden">
-           <img src={"https://public.readdy.ai/ai/img_res/7f9b9369f7493b01111a1b786e43e96a.jpg"} alt=""  />
-            </div>
+          <div className="relative bg-gray-200 rounded-3xl shadow-xl overflow-hidden aspect-video lg:aspect-square">
+            <img src={"https://public.readdy.ai/ai/img_res/7f9b9369f7493b01111a1b786e43e96a.jpg"} alt="Travel Innovation" className="w-full h-full object-cover" />
+          </div>
         </div>
       </div>
     </section>
@@ -93,11 +93,11 @@ const oniqoPage = () => {
 
 
     return (
-     <section className="py-20 px-6 bg-gray-50">
+     <section className="py-16 md:py-20 px-6 md:px-12 bg-gray-50">
       <div className="max-w-7xl mx-auto text-center">
-        <div className="text-sm text-gray-600 mb-4">NOTRE ÉCOSYSTÈME</div>
-        <h2 className="text-5xl font-bold mb-4">Sept marques, une vision</h2>
-        <p className="text-gray-600 mb-12 max-w-2xl mx-auto text-xl">
+        <div className="text-xs md:text-sm text-gray-600 mb-4 tracking-wider uppercase">NOTRE ÉCOSYSTÈME</div>
+        <h2 className="text-3xl md:text-5xl font-bold mb-4">Sept marques, une vision</h2>
+        <p className="text-gray-600 mb-12 max-w-2xl mx-auto text-lg md:text-xl">
           Chaque marque du groupe oniqo répond à un besoin spécifique du marché touristique mondial
         </p>
 
@@ -137,11 +137,11 @@ const oniqoPage = () => {
     ];
 
     return (
-      <section className="py-20 px-6">
+      <section className="py-16 md:py-20 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {stats.map((stat, idx) => (
-              <div key={idx} className="bg-white rounded-2xl p-8 text-center hover:shadow-lg transition-shadow">
+              <div key={idx} className="bg-white rounded-2xl p-6 md:p-8 text-center hover:shadow-lg transition-shadow border border-gray-100">
                 <div className="inline-flex items-center justify-center w-14 h-14 bg-[#1f2837] rounded-xl mb-4">
                   <stat.icon className="w-5 h-5 text-white" />
                 </div>
@@ -180,19 +180,20 @@ const oniqoPage = () => {
     ];
 
     return (
-      <section className="py-20 px-6 bg-white">
+      <section className="py-16 md:py-20 px-6 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <div className="text-sm text-gray-600 mb-4">NOS SOLUTIONS</div>
-            <h2 className="text-5xl font-bold mb-4">
-             Un écosystème complet  </h2>
-                <p className="text-xl text-gray-600 mb-8">
+            <div className="text-xs md:text-sm text-gray-600 mb-4 tracking-wider uppercase">NOS SOLUTIONS</div>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              Un écosystème complet
+            </h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
               De la mobilité à l'hébergement, nous couvrons tous les aspects du voyage moderne
-          </p>
+            </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.map((service, idx) => (
-              <div key={idx} className="bg-gray-50 rounded-2xl p-8 hover:shadow-lg hover:transform hover:-translate-y-2 transition-all duration-300">
+              <div key={idx} className="bg-gray-50 rounded-2xl p-6 md:p-8 hover:shadow-lg hover:transform hover:-translate-y-2 transition-all duration-300">
                 <div className="inline-flex items-center justify-center w-14 h-14 bg-[#1f2837] rounded-xl mb-4">
                   <service.icon className="w-6 h-6 text-white" />
                 </div>
@@ -207,9 +208,9 @@ const oniqoPage = () => {
   };
 
   const CTASection = () => (
-    <section className="py-20 px-6 bg-[#1f2837] text-white">
+    <section className="py-16 md:py-20 px-6 md:px-12 bg-[#1f2837] text-white">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-5xl font-bold mb-8">Rejoignez l'aventure oniqo</h2>
+        <h2 className="text-3xl md:text-5xl font-bold mb-8">Rejoignez l'aventure oniqo</h2>
         <div className="flex flex-wrap justify-center gap-4">
           <Button className="bg-white h-14 text-[#1f2837] hover:bg-gray-100 rounded-full px-8">
             Espace investisseurs
@@ -253,15 +254,15 @@ const NewsSection = () => {
   ];
 
   return (
-    <section className="py-20 px-6">
+    <section className="py-16 md:py-20 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex justify-between items-end mb-12">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-12 gap-4">
           <div>
-            <div className="text-sm text-gray-600 mb-2">ACTUALITÉS</div>
-            <h2 className="text-5xl font-bold">Dernières nouvelles</h2>
+            <div className="text-xs md:text-sm text-gray-600 mb-2 tracking-wider uppercase">ACTUALITÉS</div>
+            <h2 className="text-3xl md:text-5xl font-bold">Dernières nouvelles</h2>
           </div>
-          <Button variant="link" className="text-[#1f2837]">
+          <Button variant="link" className="text-[#1f2837] p-0 h-auto font-semibold">
             Voir toutes les actualités →
           </Button>
         </div>

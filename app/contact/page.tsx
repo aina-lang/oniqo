@@ -7,29 +7,29 @@ const oniqoContactPage = () => {
   const [openFAQ, setOpenFAQ] = useState<number|null>(null);
 
 
- const HeroSection = () => (
-  <section
-    className="pt-32 pb-16 px-6 text-white relative overflow-hidden"
-    style={{
-      backgroundColor: '#1f2837',
-      backgroundImage: `
-        radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px),
-        radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px)
-      `,
-      backgroundPosition: '0 0, 20px 20px',
-      backgroundSize: '20px 20px',
-    }}
-  >
-    <div className="max-w-4xl mx-auto text-center relative">
-      <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-        Contactez-nous
-      </h1>
-      <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-        Notre équipe est à votre écoute pour répondre à toutes vos questions et discuter de vos projets
-      </p>
-    </div>
-  </section>
-);
+  const HeroSection = () => (
+    <section
+      className="pt-24 md:pt-32 pb-12 md:pb-16 px-6 text-white relative overflow-hidden"
+      style={{
+        backgroundColor: '#1f2837',
+        backgroundImage: `
+          radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px),
+          radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px)
+        `,
+        backgroundPosition: '0 0, 20px 20px',
+        backgroundSize: '20px 20px',
+      }}
+    >
+      <div className="max-w-4xl mx-auto text-center relative">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          Contactez-nous
+        </h1>
+        <p className="text-base md:text-lg text-gray-300 max-w-3xl mx-auto">
+          Notre équipe est à votre écoute pour répondre à toutes vos questions et discuter de vos projets
+        </p>
+      </div>
+    </section>
+  );
 
 
   const ContactSection = () => {
@@ -54,12 +54,12 @@ const oniqoContactPage = () => {
     };
 
     return (
-      <section className="py-20 px-14">
+      <section className="py-16 md:py-20 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row gap-16">
-            <div className='w-full md:w-1/3'>
-              <h2 className="text-3xl font-bold mb-4">Informations de contact</h2>
-              <p className="text-gray-600 mb-12">
+          <div className="flex flex-col lg:flex-row gap-12 md:gap-16">
+            <div className='w-full lg:w-1/3'>
+              <h2 className="text-2xl md:text-3xl font-bold mb-4">Informations de contact</h2>
+              <p className="text-gray-600 mb-8 md:mb-12 text-base">
                 Nous sommes là pour vous accompagner sur vos besoins et explorer les opportunités de collaboration.
               </p>
 
@@ -137,16 +137,16 @@ const oniqoContactPage = () => {
               </div>
             </div>
 
-            <div className="bg-gray-50 rounded-3xl p-8 w-full md:w-2/3 border border-gray-200">
-              <h3 className="text-2xl font-bold mb-2">Envoyez-nous un message</h3>
+            <div className="bg-gray-50 rounded-3xl p-6 md:p-8 w-full lg:w-2/3 border border-gray-200 shadow-sm">
+              <h3 className="text-xl md:text-2xl font-bold mb-2">Envoyez-nous un message</h3>
               <p className="text-gray-600 mb-6 text-sm">
                 Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.
               </p>
 
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium mb-2">
+                    <label className="block text-sm font-medium mb-1 md:mb-2">
                       Prénom <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -173,9 +173,9 @@ const oniqoContactPage = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium mb-2">Email</label>
+                    <label className="block text-sm font-medium mb-1 md:mb-2">Email</label>
                     <input
                       type="email"
                       name="email"
@@ -270,13 +270,13 @@ const oniqoContactPage = () => {
   };
 
   const MapSection = () => (
-    <section className="py-20 px-6 bg-gray-50">
+    <section className="py-16 md:py-20 px-6 md:px-12 bg-gray-50">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4">Notre localisation</h2>
-          <p className="text-gray-600">Visitez notre siège social au cœur de Paris</p>
+        <div className="text-center mb-10 md:mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Notre localisation</h2>
+          <p className="text-gray-600 text-base">Visitez notre siège social au cœur de Paris</p>
         </div>
-        <div className="w-full h-[80vh] bg-gray-300 rounded-3xl overflow-hidden relative">
+        <div className="w-full h-[50vh] md:h-[80vh] bg-gray-300 rounded-3xl overflow-hidden relative shadow-inner">
           <div className="absolute inset-0 flex items-center justify-center text-gray-500">
            <iframe 
              src="https://maps.google.com/maps?q=Paris,France&t=&z=13&ie=UTF8&iwloc=&output=embed" 
@@ -320,11 +320,11 @@ const oniqoContactPage = () => {
     ];
 
     return (
-      <section className="py-20 px-6">
+      <section className="py-16 md:py-20 px-6 md:px-12">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Questions fréquentes</h2>
-            <p className="text-gray-600 text-lg">Trouvez rapidement des réponses à vos questions</p>
+          <div className="text-center mb-10 md:mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Questions fréquentes</h2>
+            <p className="text-gray-600 text-base md:text-lg">Trouvez rapidement des réponses à vos questions</p>
           </div>
           <div className="space-y-4">
             {faqs.map((faq, idx) => (

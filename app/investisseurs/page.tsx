@@ -6,13 +6,13 @@ import { Menu, TrendingUp, Globe, Lightbulb, Users, DollarSign, Zap, FileText, C
 const oniqoInvestorsPage = () => {
  
   const HeroSection = () => (
-    <section className="pt-32 pb-20 px-6">
-      <div className=" text-left max-w-3xl ">
-        <div className="text-sm text-gray-600 mb-4">RELATIONS INVESTISSEURS</div>
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+    <section className="pt-24 md:pt-32 pb-12 md:pb-20 px-6 md:px-12">
+      <div className="text-left max-w-3xl">
+        <div className="text-xs md:text-sm text-gray-600 mb-4 tracking-wider uppercase">RELATIONS INVESTISSEURS</div>
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
           Investir dans l'avenir du voyage
         </h1>
-        <p className="text-xl text-gray-600 ">
+        <p className="text-lg md:text-xl text-gray-600">
           Découvrez les opportunités d'investissement dans le groupe oniqo et participez à la construction de l'écosystème touristique de demain.
         </p>
       </div>
@@ -20,30 +20,30 @@ const oniqoInvestorsPage = () => {
   );
 
   const OpportunitySection = () => (
-    <section className="py-20 px-6 ">
+    <section className="py-16 md:py-20 px-6 md:px-12 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl font-bold mb-6">Une opportunité unique</h2>
-            <p className="text-gray-600 mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Une opportunité unique</h2>
+            <p className="text-gray-600 mb-6 text-base md:text-lg">
               Marques complémentaires et une vision claire, nous construisons un écosystème touristique intégré à portée internationale.
             </p>
-            <p className="text-gray-600 mb-8">
+            <p className="text-gray-600 mb-8 text-base md:text-lg">
               Notre approche multi-marques nous permet de capter de la valeur sur l'ensemble de la chaîne du voyage, de la planification à l'expérience sur place, en passant par la réservation et la gestion.
             </p>
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-4 md:gap-8">
               <div className="bg-gray-100 rounded-2xl p-6">
-                <div className="text-5xl font-bold mb-2">7</div>
-                <div className="text-sm text-gray-600">Marques en portefeuille</div>
+                <div className="text-3xl md:text-5xl font-bold mb-2">7</div>
+                <div className="text-xs md:text-sm text-gray-600">Marques en portefeuille</div>
               </div>
               <div className="bg-gray-100 rounded-2xl p-6">
-                <div className="text-5xl font-bold mb-2">2024</div>
-                <div className="text-sm text-gray-600">Année de création</div>
+                <div className="text-3xl md:text-5xl font-bold mb-2">2024</div>
+                <div className="text-xs md:text-sm text-gray-600">Année de création</div>
               </div>
             </div>
           </div>
-          <div className="relative h-96 bg-gradient-to-br from-slate-800 to-[#1f2837] rounded-3xl overflow-hidden p-8">
-           <img src="https://public.readdy.ai/ai/img_res/36a14a3e27d98f621d4098ab6ae59dab.jpg" alt="" />
+          <div className="relative aspect-square lg:h-[78vh] lg:max-w-xl mx-auto w-full bg-gradient-to-br from-slate-800 to-[#1f2837] rounded-3xl overflow-hidden shadow-2xl">
+            <img src="https://public.readdy.ai/ai/img_res/36a14a3e27d98f621d4098ab6ae59dab.jpg" alt="Investor Opportunity" className="w-full h-full object-cover" />
           </div>
         </div>
       </div>
@@ -58,19 +58,19 @@ const oniqoInvestorsPage = () => {
     ];
 
     return (
-      <section className="py-20 px-6 ">
+      <section className="py-16 md:py-20 px-6 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="text-sm text-gray-600 mb-4">MARCHÉ</div>
-          <h2 className="text-5xl font-bold mb-4">Un marché en forte croissance</h2>
-          <p className="text-gray-600 mb-16 max-w-2xl mx-auto text-lg">
+          <div className="text-xs md:text-sm text-gray-600 mb-4 tracking-wider uppercase">MARCHÉ</div>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Un marché en forte croissance</h2>
+          <p className="text-gray-600 mb-12 md:mb-16 max-w-2xl mx-auto text-base md:text-lg">
             Le secteur du tourisme connaît une transformation digitale majeure avec des opportunités considérables
           </p>
-          <div className="grid md:grid-cols-3 gap-12">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
             {stats.map((stat, idx) => (
-              <div key={idx} className='bg-white rounded-2xl p-6 transition-all hover:shadow-lg transform hover:-translate-y-2'>
-                <div className="text-5xl font-bold mb-2">{stat.value}</div>
-                <div className="text-lg font-semibold mb-3">{stat.label}</div>
-                <p className="text-sm text-gray-600">{stat.description}</p>
+              <div key={idx} className='bg-gray-50 rounded-2xl p-6 md:p-8 transition-all hover:shadow-lg transform hover:-translate-y-2 border border-gray-100'>
+                <div className="text-3xl md:text-5xl font-bold mb-2 text-[#1f2837]">{stat.value}</div>
+                <div className="text-base md:text-lg font-semibold mb-3">{stat.label}</div>
+                <p className="text-sm text-gray-600 leading-relaxed">{stat.description}</p>
               </div>
             ))}
           </div>
@@ -114,19 +114,19 @@ const oniqoInvestorsPage = () => {
     ];
 
     return (
-      <section className="py-20 px-6 bg-white">
+      <section className="py-16 md:py-20 px-6 md:px-12 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Pourquoi investir dans ONIQO</h2>
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Pourquoi investir dans ONIQO</h2>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
             {reasons.map((reason, idx) => (
-              <div key={idx} className='bg-gray-50 rounded-2xl p-6 transition-all hover:shadow-lg transform hover:-translate-y-2'>
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-[#1f2837] rounded-xl mb-4">
-                  <reason.icon className="w-6 h-6 text-white" />
+              <div key={idx} className='bg-white rounded-2xl p-6 md:p-8 transition-all hover:shadow-lg transform hover:-translate-y-2 border border-gray-100'>
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-[#1f2837] rounded-xl mb-4 shadow-md">
+                  <reason.icon className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{reason.title}</h3>
-                <p className="text-gray-600 text-sm">{reason.description}</p>
+                <h3 className="text-lg md:text-xl font-bold mb-3">{reason.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{reason.description}</p>
               </div>
             ))}
           </div>
@@ -158,25 +158,25 @@ const oniqoInvestorsPage = () => {
     ];
 
     return (
-      <section className="py-20 px-6">
+      <section className="py-16 md:py-20 px-6 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="text-sm text-gray-600 mb-4">INFORMATIONS FINANCIÈRES</div>
-            <h2 className="text-5xl font-bold mb-4">Transparence et communication</h2>
-            <p className="text-gray-600 max-w-2xl text-lg mx-auto">
+          <div className="text-center mb-12 md:mb-16">
+            <div className="text-xs md:text-sm text-gray-600 mb-4 tracking-wider uppercase">INFORMATIONS FINANCIÈRES</div>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">Transparence et communication</h2>
+            <p className="text-gray-600 max-w-2xl text-base md:text-lg mx-auto">
               Nous nous engageons à maintenir une communication transparente avec nos investisseurs
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {resources.map((resource, idx) => (
-              <div key={idx} className="bg-white hover:shadow-lg transform hover:-translate-y-2 rounded-2xl p-8 hover:shadow-lg transition-all">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-[#1f2837] rounded-xl mb-4">
-                  <resource.icon className="w-6 h-6 text-white" />
+              <div key={idx} className="bg-white border border-gray-100 rounded-2xl p-6 md:p-8 hover:shadow-xl transition-all transform hover:-translate-y-1">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-[#1f2837] rounded-xl mb-4 shadow-sm">
+                  <resource.icon className="w-5 h-5 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">{resource.title}</h3>
-                <p className="text-gray-600 text-sm mb-6">{resource.description}</p>
-                <a href="#" className="text-[#1f2837] font-semibold text-sm inline-flex items-center hover:gap-2 transition-all">
-                  {resource.link} <ArrowRight className="w-4 h-4 ml-1" />
+                <h3 className="text-lg md:text-xl font-bold mb-2">{resource.title}</h3>
+                <p className="text-gray-600 text-sm mb-6 leading-relaxed">{resource.description}</p>
+                <a href="#" className="text-[#1f2837] font-semibold text-sm inline-flex items-center hover:gap-2 transition-all group">
+                  {resource.link} <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
                 </a>
               </div>
             ))}
@@ -187,14 +187,14 @@ const oniqoInvestorsPage = () => {
   };
 
   const CTASection = () => (
-    <section className="py-20 px-6 bg-[#1f2837] text-white">
+    <section className="py-16 md:py-20 px-6 md:px-12 bg-[#1f2837] text-white">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl font-bold mb-4">Intéressé par un investissement ?</h2>
-        <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">Intéressé par un investissement ?</h2>
+        <p className="text-gray-300 mb-10 max-w-2xl mx-auto text-lg">
           Contactez notre équipe relations investisseurs pour en savoir plus sur les opportunités d'investissement
         </p>
-        <Button className="bg-white h-14 text-[#1f2837] hover:bg-gray-100 rounded-full w-56">
-          Nous contacter <ArrowRight/>
+        <Button className="bg-white h-14 text-[#1f2837] hover:bg-gray-100 rounded-full w-full sm:w-64 transition-transform active:scale-95">
+          Nous contacter <ArrowRight className="ml-2 w-4 h-4" />
         </Button>
       </div>
     </section>

@@ -8,7 +8,7 @@ export const Footer = () => (
       <div className="flex flex-col md:flex-row mb-16 gap-12 md:gap-0">
         
         {/* --- Col 1 --- */}
-        <div className="space-y-6 w-full md:w-200">
+        <div className="space-y-6 w-full md:w-150">
           <Link
             href="/"
             className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent hover:opacity-90 transition-opacity"

@@ -22,13 +22,13 @@ interface SolutionCardProps {
 const oniqoSolutionsPage = () => {
 
   const HeroSection = () => (
-    <section className="pt-32 pb-20 px-6">
-      <div className=" text-left">
-        <div className="text-sm text-gray-600 mb-4">NOS SOLUTIONS</div>
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+    <section className="pt-24 md:pt-32 pb-12 md:pb-20 px-6 md:px-12">
+      <div className="text-left">
+        <div className="text-xs md:text-sm text-gray-600 mb-4 tracking-wider uppercase">NOS SOLUTIONS</div>
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight max-w-4xl">
           Solutions complètes pour l'écosystème du voyage
         </h1>
-        <p className="text-lg text-gray-600 w-1/2">
+        <p className="text-base md:text-lg text-gray-600 max-w-2xl leading-relaxed">
           De la mobilité à l'hébergement, en passant par les expériences et la gestion, nous couvrons tous les aspects du voyage moderne avec des solutions technologiques innovantes.
         </p>
       </div>
@@ -38,36 +38,36 @@ const oniqoSolutionsPage = () => {
   const SolutionCard = ({ badge, title, description, features, bgColor, reverse, image, buttonGradient }: SolutionCardProps) => {
     const content = (
       <>
-        <div className={reverse ? 'order-2' : 'order-1'}>
-          <span className="inline-block bg-blue-100 text-blue-700 text-xs px-4 py-2 rounded-full mb-4 font-semibold">
+        <div className={`order-2 ${reverse ? 'lg:order-2' : 'lg:order-1'}`}>
+          <span className="inline-block bg-blue-50 text-blue-700 text-xs px-4 py-1.5 rounded-full mb-4 font-semibold shadow-sm border border-blue-100">
             {badge}
           </span>
-          <h2 className="text-4xl font-bold mb-4">{title}</h2>
-          <p className="text-gray-600 mb-8">{description}</p>
-          <div className="grid grid-cols-2 gap-4 mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">{title}</h2>
+          <p className="text-gray-600 mb-8 text-base md:text-lg leading-relaxed">{description}</p>
+          <div className="grid sm:grid-cols-2 gap-4 mb-8">
             {features.map((feature, idx) => (
-              <div key={idx} className="flex items-start gap-3 p-3 bg-gray-100 rounded-xl">
-                <div className="shrink-0 w-10 h-10 bg-[#1f2837] rounded-xl flex items-center justify-center">
+              <div key={idx} className="flex items-start gap-3 p-4 bg-gray-50 rounded-2xl border border-gray-100 hover:bg-white hover:shadow-md transition-all">
+                <div className="shrink-0 w-10 h-10 bg-[#1f2837] rounded-xl flex items-center justify-center shadow-lg">
                   <feature.icon className="w-5 h-5 text-white" />
                 </div>
-                <div className="text-sm font-medium">{feature.text}</div>
+                <div className="text-sm font-semibold">{feature.text}</div>
               </div>
             ))}
           </div>
-          <Button className={`${buttonGradient || 'bg-[#1f2837]'} h-14 hover:opacity-90 rounded-full px-8`}>
-            En savoir plus →
+          <Button className={`${buttonGradient || 'bg-[#1f2837]'} h-14 hover:opacity-90 rounded-full px-8 w-full sm:w-auto shadow-lg transition-transform active:scale-95`}>
+            En savoir plus <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
         </div>
-        <div className={`relative h-96 ${bgColor} rounded-3xl overflow-hidden p-8 ${reverse ? 'order-1' : 'order-2'}`}>
-          <img src={image} alt="" />
+        <div className={`relative aspect-square lg:h-[78vh] lg:max-w-xl mx-auto w-full ${bgColor} rounded-3xl overflow-hidden shadow-2xl order-1 ${reverse ? 'lg:order-1' : 'lg:order-2'}`}>
+          <img src={image} alt={title} className="w-full h-full object-cover" />
         </div>
       </>
     );
 
     return (
-      <section className="py-12 px-6">
+      <section className="py-12 md:py-16 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             {content}
           </div>
         </div>
@@ -100,21 +100,21 @@ const oniqoSolutionsPage = () => {
     ];
 
     return (
-      <section className="py-20 px-6 bg-gray-50">
+      <section className="py-16 md:py-24 px-6 md:px-12 bg-gray-50">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="text-sm text-gray-600 mb-4">TECHNOLOGIES</div>
-          <h2 className="text-5xl font-bold mb-4">Infrastructure technologique</h2>
-          <p className="text-gray-600 mb-12 max-w-2xl mx-auto text-lg">
+          <div className="text-xs md:text-sm text-gray-600 mb-4 tracking-wider uppercase">TECHNOLOGIES</div>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Infrastructure technologique</h2>
+          <p className="text-gray-600 mb-12 md:mb-16 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
             Des technologies de pointe pour garantir performance, sécurité et évolutivité
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {techs.map((tech, idx) => (
-              <div key={idx} className="bg-white rounded-2xl p-8 text-left hover:shadow-lg transform hover:-translate-y-2 duration-200 transition-transform">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-[#1f2837] rounded-xl mb-4">
+              <div key={idx} className="bg-white border border-gray-100 rounded-2xl p-8 text-left hover:shadow-xl transform hover:-translate-y-1 duration-300 transition-all shadow-sm">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-[#1f2837] rounded-xl mb-6 shadow-md">
                   <tech.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">{tech.title}</h3>
-                <p className="text-gray-600 text-sm">{tech.description}</p>
+                <h3 className="text-lg md:text-xl font-bold mb-3">{tech.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{tech.description}</p>
               </div>
             ))}
           </div>
@@ -124,15 +124,17 @@ const oniqoSolutionsPage = () => {
   };
 
   const CTASection = () => (
-    <section className="py-20 px-6 bg-[#1f2837] text-white">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-5xl font-bold mb-4">Intéressé par nos solutions ?</h2>
-        <p className="text-gray-300 mb-8 max-w-2xl mx-auto text-lg">
+    <section className="py-16 md:py-24 px-6 md:px-12 bg-[#1f2837] text-white">
+      <div className="max-w-4xl mx-auto text-center">
+        <h2 className="text-3xl md:text-5xl font-bold mb-6">Intéressé par nos solutions ?</h2>
+        <p className="text-gray-300 mb-10 text-lg md:text-xl leading-relaxed">
           Contactez-nous pour découvrir comment nos solutions peuvent transformer votre activité
         </p>
-        <Button className="bg-white h-14  text-[#1f2837] hover:bg-gray-100 rounded-full w-56">
-          Nous contacter <ArrowRight/>
-        </Button>
+        <div className="flex justify-center">
+          <Button className="bg-white h-14 text-[#1f2837] hover:bg-gray-100 rounded-full w-full sm:w-64 shadow-xl transition-transform active:scale-95 text-lg font-semibold">
+            Nous contacter <ArrowRight className="ml-2 w-5 h-5" />
+          </Button>
+        </div>
       </div>
     </section>
   );
